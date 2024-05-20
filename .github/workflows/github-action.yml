@@ -20,10 +20,4 @@ jobs:
       - name: Test
         run: mvn --batch-mode test
 
-      - name: "Telegram Notification"
-        uses: "appleboy/telegran-actiongnaster"
-        with:
-         to: ${{ secrets. TELEGRAM_CHAT ID }}
-         token: ${{secrets.TELEGRAM_TOKEN}}
-         args: New version publish
 
