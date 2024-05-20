@@ -19,6 +19,7 @@ jobs:
         run: mvn --batch-mode -DskipTests package
       - name: Test
         run: mvn --batch-mode test
+
       - name: Notify Telegram on failure
         if: failure()
         uses: appleboy/telegram-action@master
