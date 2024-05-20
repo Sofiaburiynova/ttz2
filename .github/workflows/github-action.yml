@@ -15,12 +15,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'adopt'
-      - name: "Edit config"
-        run: git config --global user.email "sofiburiynova@yandex.ru" &&  git config --global user.name "Sophia Buriynova"
-      - name: "Version patch"
-        run: nmp version 0.1.$GITHUB_RUN_ID
-
-
       - name: Build
         run: mvn --batch-mode -DskipTests package
       - name: Test
@@ -31,5 +25,5 @@ jobs:
         with:
          to: ${{ secrets. TELEGRAM_CHAT ID }}
          token: ${{secrets.TELEGRAM_TOKEN}}
-         args: New 0.1.${{ github.run_id }} version publish
+         args: New version publish
 
